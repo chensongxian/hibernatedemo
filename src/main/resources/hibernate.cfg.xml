@@ -5,14 +5,27 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
+
+		<!-- 【连接池配置】 -->
+		<!-- 配置连接驱动管理类 -->
+		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+		<!-- 配置连接池参数信息 -->
+		<property name="hibernate.c3p0.min_size">2</property>
+		<property name="hibernate.c3p0.max_size">4</property>
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<property name="hibernate.c3p0.max_statements">10</property>
+		<property name="hibernate.c3p0.idle_test_period">30000</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+
+
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>
-		<property name="connection.url">
+		<property name="hibernate.connection.url">
 			jdbc:mysql://localhost:3306/hibernate_1?characterEncoding=UTF-8
 		</property>
-		<property name="connection.username">root</property>
-		<property name="connection.password">123456</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">123456</property>
 		<property name="dialect">
 			org.hibernate.dialect.MySQLDialect
 		</property>
@@ -36,5 +49,12 @@
 		<!--<mapping class="com.csx.domain.User"/>-->
 
 		<mapping resource="com/csx/domain/Employee.hbm.xml"/>
+
+		<mapping resource="com/csx/map/collection/User.hbm.xml"/>
+
+		<mapping resource="com/csx/map/many2many/Role.hbm.xml"/>
+		<mapping resource="com/csx/map/many2many/User.hbm.xml"/>
+
+		<mapping class="com.csx.session.User"/>
 	</session-factory>
 </hibernate-configuration>

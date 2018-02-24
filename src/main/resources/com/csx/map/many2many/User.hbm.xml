@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.csx.map.many2many" auto-import="true">
+    <class name="User" table="t_dept">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name"/>
+        <!--使用<set>标签映射集合(set)，标签中的name值为对象属性名(集合roles)，
+        而使用table属性是用于生成第三方表名称，例：table="t_user_role"，但是第三方面中的字段是自动加入的，作为外键分别指向其它表。
+        所以表<key>标签设置，例：<key column="userid"/>，
+        意思是：在第三方表(t_user_role)中加入一个外键并且指向当前的映射实体类所对应的表(t_user).
+        使用<many-to-many>来指定此映射集合所对象的类(实例类)，并且使用column属性加入一个外键指向Role实体类所对应的表(t_role) -->
+        <set name="roles" table="t_user_role">
+            <key column="userid"/>
+            <many-to-many class="Role" column="roleid"/>
+        </set>
+    </class>
+
+</hibernate-mapping>

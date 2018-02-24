@@ -1,3 +1,5 @@
+package com.csx.domain;
+
 import com.csx.domain.CompositeKeys;
 import com.csx.domain.User;
 import org.hibernate.Session;

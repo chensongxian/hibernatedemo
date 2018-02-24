@@ -1,3 +1,5 @@
+package com.csx.domain;
+
 import com.csx.domain.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -86,21 +88,25 @@ public class EmployeeTest {
 
 
     /**
-     * 主键查询
+     * 主键查询,支持懒加载
+     * 要用到数据时才会向数据库发送查询语句
+     *
      */
     @Test
     public void loadEmployee(){
         Employee employee=session.load(Employee.class,1);
         Assertions.assertNotNull(employee);
+
     }
 
     /**
-     * 主键查询支持懒加载
+     * 主键查询不支持懒加载
+     * 及时加载
      */
     @Test
     public void getEmployee(){
         Employee employee=session.get(Employee.class,1);
-        Assertions.assertNotNull(employee);
+//        Assertions.assertNotNull(employee);
     }
 
 }
