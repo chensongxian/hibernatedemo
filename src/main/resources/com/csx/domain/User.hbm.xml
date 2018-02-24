@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.csx.domain" auto-import="true">
+    <class name="User">
+        <!-- 复合主键映射 -->
+        <composite-id name="keys">
+            <key-property name="userName" type="string"/>
+            <key-property name="address" type="string"/>
+        </composite-id>
+
+        <!-- 普通属性 -->
+        <property name="age" type="int"/>
+
+    </class>
+</hibernate-mapping>

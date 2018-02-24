@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/hibernate_1?characterEncoding=UTF-8
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">123456</property>
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<!--
+			自动生成表配置
+			none:什么操作都不发生
+			create-only:数据库将被创建
+			create-drop:每次在创建sessionFactory时候执行创建表,当调用sesisonFactory的close方法的时候，删除表！
+			creat:每次都重新建表,如果表已经存在就先删除再创建
+			update:如果表不存在就创建,表存在就不创建
+			validate:(生成环境时候) 执行验证,当映射文件的内容与数据库表结构不一样的时候就报错！
+		-->
+		<property name="hbm2ddl.auto">update</property>
+		<!--与本地线程绑定-->
+		<property name="current_session_context_class">thread</property>
+		<!--使用xml配置-->
+		<!--<mapping resource="com/csx/domain/User.hbm.xml" />-->
+		<!--使用注解-->
+		<!--<mapping class="com.csx.domain.User"/>-->
+
+		<mapping resource="com/csx/domain/Employee.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
