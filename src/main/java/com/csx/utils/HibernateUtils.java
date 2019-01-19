@@ -2,6 +2,7 @@ package com.csx.utils;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl;
 import org.hibernate.cfg.Configuration;
 
 /**
@@ -18,6 +19,7 @@ public class HibernateUtils {
 
     static {
         Configuration configuration=new Configuration().configure();
+        configuration.setPhysicalNamingStrategy(new PhysicalNamingStrategyStandardImpl());
         sessionFactory=configuration.buildSessionFactory();
     }
 

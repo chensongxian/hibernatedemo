@@ -1,6 +1,6 @@
 package com.csx.dao;
 
-import com.csx.domain.Employee;
+import com.csx.domain.xml.Employee;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.csx.domain;
+package com.csx.domain.xml;
 
 import java.util.Date;
 
@@ -13,6 +13,14 @@ public class Employee {
     private int empId;
     private String empName;
     private Date workDate;
+
+    public Employee() {
+    }
+
+    public Employee(String empName, Date workDate) {
+        this.empName = empName;
+        this.workDate = workDate;
+    }
 
     public int getEmpId() {
         return empId;

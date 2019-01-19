@@ -1,6 +1,5 @@
 package com.csx.map.collection;
 
-import com.csx.map.collection.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -22,7 +21,7 @@ public class CollectionTest {
         // 创建sf对象
         sf = new Configuration()
                 .configure()
-                .addClass(com.csx.domain.User.class)  //（测试） 会自动加载映射文件：Employee.hbm.xml
+                .addClass(com.csx.domain.xml.User.class)  //（测试） 会自动加载映射文件：Employee.hbm.xml
                 .buildSessionFactory();
     }
 

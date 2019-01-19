@@ -1,7 +1,7 @@
 package com.csx.dao.impl;
 
 import com.csx.dao.IEmployeeDao;
-import com.csx.domain.Employee;
+import com.csx.domain.xml.Employee;
 import com.csx.utils.HibernateUtils;
 import org.hibernate.Query;
 import org.hibernate.Session;

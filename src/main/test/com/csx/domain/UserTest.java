@@ -1,7 +1,7 @@
 package com.csx.domain;
 
-import com.csx.domain.CompositeKeys;
-import com.csx.domain.User;
+import com.csx.domain.xml.CompositeKeys;
+import com.csx.domain.xml.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

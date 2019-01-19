@@ -25,7 +25,7 @@
 			jdbc:mysql://localhost:3306/hibernate_1?characterEncoding=UTF-8
 		</property>
 		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">123456</property>
+		<property name="hibernate.connection.password">1234</property>
 		<property name="dialect">
 			org.hibernate.dialect.MySQLDialect
 		</property>
@@ -46,7 +46,7 @@
 		<!--使用xml配置-->
 		<!--<mapping resource="com/csx/domain/User.hbm.xml" />-->
 		<!--使用注解-->
-		<!--<mapping class="com.csx.domain.User"/>-->
+		<!--<mapping class="com.csx.domain.xml.User"/>-->
 
 		<mapping resource="com/csx/domain/Employee.hbm.xml"/>
 
@@ -56,5 +56,9 @@
 		<mapping resource="com/csx/map/many2many/User.hbm.xml"/>
 
 		<mapping class="com.csx.session.User"/>
+
+		<!--<mapping class="com.csx.domain.anno.Product"/>-->
+
+		<mapping class="com.csx.domain.anno.Phone"/>
 	</session-factory>
 </hibernate-configuration>

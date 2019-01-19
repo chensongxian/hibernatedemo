@@ -1,4 +1,4 @@
-package com.csx.domain;
+package com.csx.domain.xml;
 
 import java.io.Serializable;
 

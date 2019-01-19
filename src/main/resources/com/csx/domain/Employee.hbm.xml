@@ -6,7 +6,7 @@
 	package: 要映射的对象所在的包(可选,如果不指定,此文件所有的类都要指定全路径)
 	auto-import 默认为true， 在写hql的时候自动导入包名
 				如果指定为false, 再写hql的时候必须要写上类的全名；
-				  如：session.createQuery("from com.csx.domain.Employee").list();
+				  如：session.createQuery("from com.csx.domain.xml.Employee").list();
  -->
 
 <hibernate-mapping package="com.csx.domain" auto-import="true">
@@ -17,7 +17,7 @@
 				  如果没有指定表名，默认与对象名称一样
 	 -->
 
-    <class name="Employee" table="employee">
+    <class name="com.csx.domain.xml.Employee" table="employee">
         <!-- 主键 -->
         <id name="empId" column="id">
             <!--

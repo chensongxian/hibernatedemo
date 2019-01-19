@@ -1,16 +1,16 @@
 package com.csx.domain;
 
-import com.csx.domain.Employee;
+import com.csx.domain.xml.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl;
 import org.hibernate.cfg.Configuration;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -31,7 +31,7 @@ public class EmployeeTest {
     @BeforeAll
     public static void before(){
         Configuration configuration=new Configuration().configure();
-
+        configuration.setImplicitNamingStrategy(new ImplicitNamingStrategyComponentPathImpl());
         sessionFactory=configuration.buildSessionFactory();
 
         session=sessionFactory.openSession();

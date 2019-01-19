@@ -1,6 +1,5 @@
-package com.csx.domain;
+package com.csx.domain.xml;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
 /**

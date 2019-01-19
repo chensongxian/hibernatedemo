@@ -2,7 +2,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.csx.domain" auto-import="true">
-    <class name="User">
+    <class name="com.csx.domain.xml.User">
         <!-- 复合主键映射 -->
         <composite-id name="keys">
             <key-property name="userName" type="string"/>
